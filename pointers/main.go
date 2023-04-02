@@ -39,6 +39,7 @@ func main() {
 	changerNums()
 
 	arrays()
+	slices()
 }
 
 func changerNums() {
@@ -66,15 +67,34 @@ func changeByPointer(n *int) {
 	*n = 9999
 }
 
-func modifySlice(s *[3]int) {
-	s[0] = 999
+func modifyArray(arr *[3]int) {
+	arr[0] = 999
 }
 
 // not a good way to modify an array
 func arrays() {
-	slice := [3]int{4, 5, 6}
+	array := [3]int{4, 5, 6}
 
-	modifySlice(&slice)
+	modifyArray(&array)
+
+	fmt.Println(array)
+
+}
+func modifySlice(s []int) {
+	s[0] = 777
+}
+
+func slices() {
+	slice := []int{7, 8, 9}
+
+	modifySlice(slice)
+
+	/*
+		we can do the same if we write
+		modifySlice(slice...)
+		and in modifySlice function
+		func modifySlice(s ...int)
+	*/
 
 	fmt.Println(slice)
 

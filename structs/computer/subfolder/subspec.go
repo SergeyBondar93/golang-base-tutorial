@@ -1,4 +1,4 @@
-package subsolder
+package subfolder
 
 type SubspecComp struct {
 	ThisIsSubspec string

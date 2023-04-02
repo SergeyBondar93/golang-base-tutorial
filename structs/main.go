@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 	"structs/computer"
-	"structs/computer/subsolder"
+	"structs/computer/subfolder"
 )
 
 type Person struct {
@@ -155,7 +155,7 @@ func importedStructs() {
 		Price: 50000,
 	}
 
-	fromSubfolder := subsolder.SubspecComp{ThisIsSubspec: "This is struct from subfolder of computer package"}
+	fromSubfolder := subfolder.SubspecComp{ThisIsSubspec: "This is struct from subfolder of computer package"}
 
 	fmt.Println("Maker:", spec.Maker)
 	fmt.Println("Price:", spec.Price)

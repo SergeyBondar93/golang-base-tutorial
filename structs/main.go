@@ -88,7 +88,10 @@ func main() {
 	person1.firstName = "SERGEY"
 
 	fmt.Println(person1)
+	// /the next couple of lines is equals
 	person1.hasBirthday()
+	(&person1).hasBirthday()
+
 	fmt.Println("AFTER UPDATE AGE", person1)
 
 	// fmt.Println(person1.greet())

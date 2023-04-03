@@ -12,6 +12,10 @@ import (
 // 	sendch <- 10
 // }
 
+// channels without second parameter named buffer is unbuffered and will be blocked
+//  until we continue to read / write from it
+// and only has one value inside
+
 // func main() {
 // 	sendch := make(chan<- int)
 // 	go sendData(sendch)

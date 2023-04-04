@@ -13,6 +13,7 @@ import (
 var x = 0
 
 func increment(wg *sync.WaitGroup, m *sync.Mutex) {
+	defer m.Unlock()
 	// each goroutine try to increase x cuncurrently
 	// and withput lock using mutex
 	// some iterations will be skipped
@@ -21,7 +22,8 @@ func increment(wg *sync.WaitGroup, m *sync.Mutex) {
 	m.Lock()
 	x++
 	wg.Done()
-	m.Unlock()
+	// we can use unlock here or with defer syntax anywhere
+	// m.Unlock()
 }
 
 func main() {
